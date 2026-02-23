@@ -3,6 +3,7 @@ from fastapi.responses import FileResponse
 import numpy as np
 import soundfile as sf
 from sklearn.decomposition import PCA
+from fastapi.middleware.cors import CORSMiddleware
 import os
 import uuid
 
