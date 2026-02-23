@@ -8,6 +8,23 @@ import uuid
 
 app = FastAPI()
 
+# -------------------------------
+# Autoriser CORS pour ton front
+# -------------------------------
+origins = [
+    "http://localhost:5500",   # si tu testes en local
+    "http://127.0.0.1:5500",
+    "https://ton-domaine-frontend.com",  # si tu héberges ton front
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],   # ou ["*"] pour tout autoriser (pas recommandé en prod)
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 # =============================
 # 1️⃣ Charger audio
 # =============================
